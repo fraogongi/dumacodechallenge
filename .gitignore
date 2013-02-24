@@ -33,3 +33,11 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+## generic files to ignore
+*~
+.DS_Store
+
+### specific files to ignore
+settings_dev.py
+settings_prod.py
