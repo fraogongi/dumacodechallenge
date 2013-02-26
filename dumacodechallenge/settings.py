@@ -1,6 +1,12 @@
 # Django settings for dumacodechallenge project.
 
-DEBUG = True
+import os
+import socket
+
+# calculated path for the site used as starting points for various other paths
+SITE_ROOT = os.path.realpath( os.path.dirname(__file__) )
+
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -28,7 +34,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Africa/Nairobi'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -64,7 +70,7 @@ STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = 'http://75.101.138.200/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -110,6 +116,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(SITE_ROOT, '../templates'),
 )
 
 INSTALLED_APPS = (
@@ -123,6 +130,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'locations',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -153,3 +161,25 @@ LOGGING = {
         },
     }
 }
+
+# Below are my custom project settings
+# ==============================================================================
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += (
+    "django.core.context_processors.request",
+)
+
+# EMAIL SETTINGS
+EMAIL_HOST = ''
+EMAIL_PORT = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = ''
+SERVER_EMAIL = ''
+
+### settings that are not environment dependent
+try:
+    from settings_dev import *
+except ImportError:
+    pass

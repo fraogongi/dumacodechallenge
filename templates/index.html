@@ -1,0 +1,39 @@
+{% extends "includes/base.html" %}
+{% load i18n %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div>
+
+<h1>Users List</h1>
+
+{% if users %}
+
+    <table border="1" width="600px">
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Phone Number</b></td>
+            <td><b>Action</b></td>
+        </tr>
+    {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.phone_number }}</td>
+            <td>
+                <form id="form{{ user.id }}" method="POST" action="location/">
+                {% csrf_token %}
+                    <input name="userid" value="{{ user.id }}" type="hidden">
+                    <input value="Assign Location" type="submit">
+                </form>
+            </td>
+        </tr>    
+    {% endfor %}
+    </table>
+    
+{% else %}
+<div class="description cms"><p>No users to display</p></div>
+{% endif %}
+
+</div>
+{% endblock %}

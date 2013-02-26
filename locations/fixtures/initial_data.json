@@ -1,0 +1,131 @@
+[
+  {
+    "model": "locations.County",
+    "pk": 1,
+    "fields": {
+      "county_name": "Nakuru"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 2,
+    "fields": {
+      "county_name": "Baringo"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 3,
+    "fields": {
+      "county_name": "Bomet"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 4,
+    "fields": {
+      "county_name": "Bungoma"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 5,
+    "fields": {
+      "county_name": "Busia"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 6,
+    "fields": {
+      "county_name": "Elgeyo - Marakwet"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 7,
+    "fields": {
+      "county_name": "Embu"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 8,
+    "fields": {
+      "county_name": "Garissa"
+    }
+  },
+  {
+    "model": "locations.County",
+    "pk": 9,
+    "fields": {
+      "county_name": "Homa Bay"
+    }
+  },
+  
+  {
+    "model": "locations.Ward",
+    "pk": 1,
+    "fields": {
+      "ward_name": "Barut",
+      "county": 1
+    }
+  },
+  {
+    "model": "locations.Ward",
+    "pk": 2,
+    "fields": {
+      "ward_name": "London",
+      "county": 1
+    }
+  },
+  {
+    "model": "locations.Ward",
+    "pk": 3,
+    "fields": {
+      "ward_name": "Kaptembwo",
+      "county": 1
+    }
+  },
+  {
+    "model": "locations.Ward",
+    "pk": 4,
+    "fields": {
+      "ward_name": "Kapkures",
+      "county": 1
+    }
+  },
+  
+  {
+    "model": "locations.Person",
+    "pk": 1,
+    "fields": {
+      "name": "William Wallace",
+      "phone_number": "+254722654321"
+    }
+  },
+  {
+    "model": "locations.Person",
+    "pk": 2,
+    "fields": {
+      "name": "Anne Hathaway",
+      "phone_number": "+254733123456"
+    }
+  },
+  {
+    "model": "locations.Person",
+    "pk": 3,
+    "fields": {
+      "name": "Thomas Gabriel",
+      "phone_number": "+254733222888"
+    }
+  },
+  {
+    "model": "locations.Person",
+    "pk": 4,
+    "fields": {
+      "name": "Bruce Willis",
+      "phone_number": "+254721999888"
+    }
+  }
+]
